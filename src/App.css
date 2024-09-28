@@ -33,6 +33,13 @@ html, body {
 }
 
 /* Stiluri pentru chat */
+
+.cs-main-container {
+  height: 90vh !important;
+  top:5vh;
+}
+
+
 .MainContainer {
   width: 100%;
   height: 100%;
@@ -103,6 +110,7 @@ html, body {
   left:50px;
   width:200px;
   text-align: center;
+  top: 5vh;
 }
 
 .brand h1 {
