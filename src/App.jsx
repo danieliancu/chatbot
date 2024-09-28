@@ -2,6 +2,8 @@ import { useState } from 'react'
 import './App.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react'
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 const API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 
@@ -10,7 +12,7 @@ function App() {
   const [typing, setTyping] = useState(false);
   const [messages, setMessages] = useState([
     {
-      message: "Bună, sunt medicul de serviciu, cu ce te pot ajuta?",
+      message: "Bună, sunt medicul de serviciu ACUM VET, cu ce te pot ajuta?",
       sender: "ChatGPT",
       position: "right"  // Alinierea ChatGPT la dreapta
     }
@@ -39,7 +41,7 @@ function App() {
 
     const systemMessage = {
       role: "system",
-      content: "Vorbește în limba română ca un veterinar cu experiență. Răspunde cât mai scurt posibil, aproape monosilabic, daca e nevoie.La orice referire generală, pune întrebări și cere detalii specifice și mergi pas cu pas către un diagnostic. Evită formulările inutile, stai pe subiect. Nu mai sfătui să apeleze in general la un medic veterinar, ci sa sune la numărul 08797876776. Dacă consideri că situația e gravă, sfătuiește să sune de urgență la numărul 08797876776."
+      content: "Vorbește în limba română ca un veterinar cu experiență. Răspunde cât mai scurt posibil, aproape monosilabic, daca e nevoie.La orice referire generală, pune întrebări și cere detalii specifice și mergi pas cu pas către un diagnostic. Evită formulările inutile, stai pe subiect. Pentru următoarele acțiuni ia în calcul ora României, și fă așa: dacă timpul este Luni - Vineri: 09.00 - 21.00, sau Sambata: 09.00 - 17.00, sau Duminica: 09.00 - 14.00 atunci vei trimite userul la adresa 'Bdul Timisoara nr. 47 (Cladirea Nufarul, vis-a-vis de Mall Plaza), Sector 6 , Bucuresti'. Altfel, vei folosi numărul de telefon 0729672672. Nu mai sfătui să apeleze in general la un medic veterinar, ci sa sune la numărul 0729672672. Dacă consideri că situația e gravă, sfătuiește să sune de urgență la numărul 0729672672, sau sa mearga la adresa, in functie de timpul mentionat mai devreme."
     }
 
     const apiRequestBody = {
@@ -70,6 +72,15 @@ function App() {
   return (
     <div className="App">
       <div>
+        <div className="brand">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4RJeNrhQjyw2ulggAaqAh39bYNFvepGmtQw&s" />
+          <h1>Servicii de urgență</h1>
+          <div>
+            <i class="fas fa-phone"></i> 0729 672 672
+            <br />
+            <i class="fas fa-map-marker-alt"></i> <a target="_blank" href="https://www.google.com/maps/dir//Bd.+Timi%C8%99oara+47,+Bucure%C8%99ti+061344,+Romania/@44.427222,25.9525225,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x40b201caa5993447:0xaa2b31e731e3a340!2m2!1d26.0349232!2d44.4272516!5m2!1e4!1e1?entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D0">Bdul Timișoara nr. 47 (Clădirea Nufărul, vis-a-vis de Mall Plaza), Sector 6, București</a>
+          </div>
+        </div>
         <MainContainer>
           <ChatContainer>
             <MessageList

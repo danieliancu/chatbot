@@ -93,3 +93,43 @@ html, body {
 .cs-message-list {
   padding:20px 0;
 }
+
+
+
+/* brand  */
+
+.brand {
+  position:fixed;
+  left:50px;
+  width:200px;
+  text-align: center;
+}
+
+.brand h1 {
+  color:red;
+}
+
+.brand img {
+  width:100%;
+}
+
+.brand>div {
+  text-align:left;
+  font-weight:100;
+}
+
+.brand i {
+  color:red;
+}
+
+.brand a {
+  color: black;
+  font-weight: 100;
+}
+
+
+@media screen and (max-width: 1120px) {
+  .brand {
+    display: none;
+  }
+}
